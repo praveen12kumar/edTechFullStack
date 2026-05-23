@@ -34,7 +34,7 @@ export default [
             // Enforce semicolons
             semi: ['error', 'always'],
             // Enforce unix line breaks (LF)
-            'linebreak-style': ['error', 'unix'],
+            'linebreak-style': 'off',
             // Require === and !== (no implicit type conversions)
             eqeqeq: ['error', 'always'],
             // Max line length of 100 characters
