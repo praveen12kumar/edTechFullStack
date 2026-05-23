@@ -7,6 +7,7 @@ const { serverConfig } = require('./config/serverConfig');
 const { attachCorrelationIdMiddleware } = require('./middlewares/correlation.middleware');
 const { genericErrorHandler } = require('./middlewares/errorMiddleware');
 const apiRouter = require('./routes');
+const connectDB = require('./config/db');
 
 // Load environment variables
 dotenv.config();
@@ -28,6 +29,7 @@ app.use(genericErrorHandler);
 // Start server
 app.listen(serverConfig.PORT, () => {
     logger.info('Server is running on port', { PORT: serverConfig.PORT });
+    connectDB();
 });
 
 module.exports = app;
